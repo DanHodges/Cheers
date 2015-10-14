@@ -17,13 +17,23 @@ namespace Cheers
             DateTime objMyBirthday = DateTime.Parse(birthday);
             DateTime now = DateTime.Now;
             int numDays = (objMyBirthday - now).Days;
-            if (numDays < 0)
+            string happyB;
+            if (numDays == 0)
             {
-                numDays +=366;
+                happyB = "It's Your Birthday!!!";
+                System.Console.Write("if has come");
             }
             else
             {
-                numDays += 1;
+                happyB = null;
+                if (numDays < 0)
+                {
+                    numDays += 366;
+                }
+                else
+                {
+                    numDays += 1;
+                }
             }
             System.Console.Write("Nice to see you, " + name + "\n \n");
             char[] ans = { 'a', 'e', 'f','h','l','m','n','o','r','s','x'};
@@ -44,8 +54,14 @@ namespace Cheers
                     System.Console.WriteLine(name.ToUpper() + " is GRAND!!!! \n");
                 }
             }
-            //System.Console.WriteLine("Your birthday is " + objMyBirthday + "\n");
-            System.Console.WriteLine("Your birthday is " + numDays + "days away \n");
+            if (happyB == null)
+            {
+                System.Console.WriteLine("Your birthday is " + numDays + "days away \n");
+            }
+            else
+            {
+                System.Console.WriteLine(happyB);
+            }
             System.Console.WriteLine("Press return to exit . . .");
             System.Console.ReadKey();
         }
