@@ -12,6 +12,19 @@ namespace Cheers
         {
             System.Console.Write("Hello, What's your name? \n");
             string name = System.Console.ReadLine();
+            System.Console.Write("Hey , " + name + " what's your birthday? (MM/DD) \n");
+            string birthday = System.Console.ReadLine();
+            DateTime objMyBirthday = DateTime.Parse(birthday);
+            DateTime now = DateTime.Now;
+            int numDays = (objMyBirthday - now).Days;
+            if (numDays < 0)
+            {
+                numDays +=366;
+            }
+            else
+            {
+                numDays += 1;
+            }
             System.Console.Write("Nice to see you, " + name + "\n \n");
             char[] ans = { 'a', 'e', 'f','h','l','m','n','o','r','s','x'};
             int counter = 0;
@@ -31,6 +44,8 @@ namespace Cheers
                     System.Console.WriteLine(name.ToUpper() + " is GRAND!!!! \n");
                 }
             }
+            //System.Console.WriteLine("Your birthday is " + objMyBirthday + "\n");
+            System.Console.WriteLine("Your birthday is " + numDays + "days away \n");
             System.Console.WriteLine("Press return to exit . . .");
             System.Console.ReadKey();
         }
