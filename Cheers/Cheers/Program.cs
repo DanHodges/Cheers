@@ -20,7 +20,7 @@ namespace Cheers
             string happyB;
             if (numDays == 0)
             {
-                happyB = "It's Your Birthday!!!";
+                happyB = "It's Your Birthday!!";
                 System.Console.Write("if has come");
             }
             else
